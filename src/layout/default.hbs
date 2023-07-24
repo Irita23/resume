@@ -1,21 +1,51 @@
-{{!-- 
-  Це леяут по замовчюванню, котрий вже містить базову структуру HTML документа
-  І котрий обгортає код container файлів для будь-яких ендпоїнтів
+{{!--
+Це леяут по замовчюванню, котрий вже містить базову структуру HTML документа
+І котрий обгортає код container файлів для будь-яких ендпоїнтів
 --}}
 <!DOCTYPE html>
 <html>
 
-  <head>
-    <title>
-      Page name
-    </title>
-    <meta charset='utf-8' />
-    <link href='css/index.css' rel='stylesheet' />
-  </head>
+<head>
+	<title>
+		{{title}}
+	</title>
+	<meta charset='utf-8' />
+	<link href='css/index.css' rel='stylesheet' />
+</head>
 
-  <body>
-    {{!  ↓  ця кострукція показує куди шаблонізатору треба вставляти код з container файлу   --}}
-    {{{body}}}
-  </body>
+<body>
+	<header>
+		<div>
+			<h1>{{name.firstname}}{{name.lastname}}</h1>
+		</div>
+		<br>
+		<div>
+			<b>{{position}}</b>
+		</div>
+		<br>
+		<div>
+			<em>
+				{{salary}}
+			</em>
+		</div>
+		<br>
+		<hr>
+	</header>
+	<nav>
+		<a href="/skills">Skills</a>
+		<a href="/summary">Summary</a>
+	</nav>
+	{{! ↓ ця кострукція показує куди шаблонізатору треба вставляти код з container файлу --}}
+	{{{body}}}
+	<footer>
+		<hr>
+		<br>
+		{{#with social}}
+		<a href="mailto:dmytro@mail.com">dmytro@mail.com</a> /
+		<a href="tel:+380670000123">+380670000123</a> /
+		<a href="https://www.linkedin.com/in/dmytro-test" target="_blank">LinkedIn</a>
+	</footer>
+
+</body>
 
 </html>
