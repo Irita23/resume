@@ -6,45 +6,73 @@
 <html>
 
 <head>
-	<title>
-		{{title}}
-	</title>
-	<meta charset='utf-8' />
-	<link href='css/index.css' rel='stylesheet' />
+    <title>
+        {{page.title}}
+    </title>
+    <meta charset='utf-8' />
+    <link href='css/index.css' rel='stylesheet' />
 </head>
 
 <body>
-	<header>
-		<div>
-			<h1>{{name.firstname}}{{name.lastname}}</h1>
-		</div>
-		<br>
-		<div>
-			<b>{{position}}</b>
-		</div>
-		<br>
-		<div>
-			<em>
-				{{salary}}
-			</em>
-		</div>
-		<br>
-		<hr>
-	</header>
-	<nav>
-		<a href="/skills">Skills</a>
-		<a href="/summary">Summary</a>
-	</nav>
-	{{! ↓ ця кострукція показує куди шаблонізатору треба вставляти код з container файлу --}}
-	{{{body}}}
-	<footer>
-		<hr>
-		<br>
-		{{#with social}}
-		<a href="mailto:dmytro@mail.com">dmytro@mail.com</a> /
-		<a href="tel:+380670000123">+380670000123</a> /
-		<a href="https://www.linkedin.com/in/dmytro-test" target="_blank">LinkedIn</a>
-	</footer>
+    {{#with header}}
+    <header>
+        <div>
+
+            <h1>{{name.firstname}}{{name.lastname}}</h1>
+        </div>
+        <br>
+        <div>
+            <b>{{position}}</b>
+        </div>
+        <br>
+        <div>
+            <em>
+                {{salary}}
+            </em>
+        </div>
+        <br>
+        <div>
+            <address>
+                <em>
+                    {{address}}
+                </em>
+            </address>
+
+
+        </div>
+        <br>
+        <hr>
+    </header>
+    {{/with}}
+
+    {{>nav}}
+
+    {{! ↓ ця кострукція показує куди шаблонізатору треба вставляти код з container файлу --}}
+    {{{body}}}
+
+    {{#with footer}}
+    <footer>
+        <hr>
+        <br>
+        <div>
+            {{#with social}}
+
+            {{>link text=email.text href=email.href blank=true }}
+            {{>link text=phone.text href=phone.href blank=true }}
+            {{>link text=linkedin.text href=linkedin.href blank=true }}
+            {{/with}}
+        </div>
+        <br>
+        <div>
+            <em>Copyright by {{../header/name/firstname}}{{../header/name/lastname}} </em>
+        </div>
+
+        <br>
+        <div>
+            <em>{{address}}</em>
+        </div>
+    </footer>
+    {{/with}}
 
 </body>
 
