@@ -217,7 +217,7 @@ router.get('/work', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
   res.render('work', {
     // ↙ сюди вводимо JSON дані
-    layout: 'big',
+    layout: 'basic',
     page: {
       title: 'Resume / Work',
     },
@@ -277,6 +277,7 @@ router.get('/work', function (req, res) {
 router.get('/program', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
   res.render('program', {
+    layout: 'basic',
     program: {
       excursion: {
         name: 'Cultural Tour',
@@ -367,7 +368,7 @@ router.get('/program', function (req, res) {
 router.get('/person', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
   res.render('person', {
-    layout: 'person',
+    layout: 'basic',
     person: {
       name: 'Emma Johnson',
       age: 32,
@@ -466,7 +467,7 @@ router.get('/person', function (req, res) {
   router.get('/web', function (req, res) {
     //             ↙ cюди вводимо назву файлу з сontainer
     res.render('web', {
-      layout: 'web',
+      layout: 'basic',
       web: {
         languages: [
           {
