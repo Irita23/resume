@@ -1,0 +1,108 @@
+{{!--
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+
+
+<div>
+		<h1>JavaScript <span class="badge bg-secondary"></span></h1>
+		 
+	 <p>{{description}}</p>
+	 
+		{{#with history}}
+		
+	 <div> {{year}}</div>
+	<div> {{founder}}</div>
+		
+		{{/with}}
+		
+
+	 <br>
+	 <div> 
+				<h2><span class="badge bg-secondary">types</span></h2>
+				<ul>
+{{#each types}}
+				<li>
+						{{this}}
+						
+				</li>
+				
+				{{/each}}
+		</ul>
+		</div>
+
+		<br>
+<div>
+		<h3><span class="badge bg-secondary">syntax</span></h3>	
+<ul>
+		{{#each syntax}}	
+<li>
+{{this}}
+</li>
+	
+	{{/each}}	
+	</ul>
+	</div>
+
+		<br>
+		<div>
+			<h4> features<span class="badge bg-secondary"></span></h4>
+		</div>
+			<ul>	
+				{{#each features }}
+			<li>{{this}} </li>
+{{/each}}
+</ul>
+		</div>
+
+<br>
+<div>
+	<h5>libraries<span class="badge bg-secondary"></span></h5>
+<ul>
+	{{#each libraries}}
+<li>{{this}}</li>
+	{{/each}}
+</ul>
+
+</div>
+
+<br>
+<div>
+	<h6>tools<span class="badge bg-secondary"></span></h6>
+	<ul>
+		{{#each tools}}
+		<li>{{this}}</li>
+		{{/each}}
+	</ul>
+</div>
+
+<hr>
+<br>
+<div>
+	<b>
+		community
+	</b>
+	<ul>
+		{{#each community}}
+		<li>{{name}}</li>
+		<li>{{type}}</li>
+		{{/each}}
+	</ul>
+	
+</div>
+ 
+</div>
+
+
+
+
+
+
+
+
+
+
+{{!--
+Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+Адже наш layout/default.hbs має вже структуру HTML
+--}}
