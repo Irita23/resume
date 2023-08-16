@@ -1,0 +1,198 @@
+{{!
+Це код container файлу для index сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/"
+}}
+<div>
+  <h1>Apple MacBook Pro </h1>
+</div>
+<div>
+  <section><h2>{{description}}
+      <div>
+        {{price}}
+      </div>
+      <div>
+        {{category}}
+      </div>
+    </h2>
+  </section>
+</div>
+<section>
+  <div>
+
+    <h3>Features:<span
+        class='badge bg-secondary'
+      ></span></h3>
+    {{#with features}}
+      <span class='badge text-bg-danger'>Processor</span>
+
+      <ul>
+        {{#with processor}}
+
+          <li>
+            {{brand}}
+          </li>
+          <li>{{model}}
+          </li>
+          <li>
+            {{speed}}
+          </li>
+          <li>
+            {{cores}}
+          </li>
+          <li>
+            {{cache}}
+          </li>
+        {{/with}}
+      </ul>
+      <div>
+        <span class='badge text-bg-success'>Memory</span>
+        <ul>
+          {{#with memory}}
+
+            <li>
+              {{type}}
+            </li>
+            <li>
+              {{size}}
+            </li>
+            <li>
+              {{speed}}
+            </li>
+          {{/with}}
+        </ul>
+      </div>
+      <div>
+        <span class='badge text-bg-primary'>Storage</span>
+        <ul>
+          {{#with storage}}
+            <li>{{type}}</li>
+            <li>{{size}}</li>
+
+          {{/with}}
+        </ul>
+      </div>
+      <div>
+        <span class='badge text-bg-info'>Display</span>
+        <ul>
+          {{#with display}}
+            <li>
+              {{size}}
+            </li>
+            <li>
+              {{resolution}}
+            </li>
+            <li>
+              {{technology}}
+            </li>
+            <li>
+              {{color_space}}
+            </li>
+            <li>
+              {{brightness}}
+            </li>
+            <li>
+              {{refresh_rate}}
+            </li>
+          {{/with}}
+        </ul>
+      </div>
+   
+  
+  <div>
+    <span class='badge text-bg-secondary'>Graphics</span>
+    <ul>
+      {{#with graphics}}
+        <li>
+          {{brand}}
+        </li>
+        <li>
+          {{model}}
+        </li>
+        <li>
+          {{memory}}
+        </li>
+      {{/with}}
+    </ul>
+  </div>
+<div>
+    <span class="badge text-bg-warning">Ports</span>
+    <ul>
+        {{#each ports}}
+<li>
+    {{type}}
+    
+    {{count}}
+</li>
+   <ul>
+    {{#each features }}
+
+<li>
+    {{this}}
+</li>
+   {{/each}}
+    </ul>
+        {{/each}}
+    </ul>
+</div>
+<div>
+    <span class="badge rounded-pill text-bg-light">Battery</span>
+    <ul>
+        {{#with battery}}
+<li>
+    {{type}}
+</li>
+<li>
+    {{capacity}}
+</li>
+<li>
+    {{life}}
+</li>
+        {{/with}}
+    </ul>
+</div>
+<div>
+    <span class="badge rounded-pill text-bg-light">Weight</span>
+  <div>
+    <span class="badge rounded-pill text-bg-light">Dimensions</span>
+    <ul>
+        {{#with dimensions}}
+<li>
+    {{height}}
+</li>
+<li>
+    {{width}}
+</li>
+<li>
+    {{depth}}
+</li>
+        {{/with}}
+    </ul>
+  </div>  
+</div>
+
+<div>
+    <span class="badge rounded-pill text-bg-info">Operating_system</span>
+<div><b>'macOS'</div></b>
+<div>
+   <span class="badge rounded-pill text-bg-light">Accessories</span> 
+</div>
+<div>
+    <ul>
+        {{#each accessories}}
+<li>
+    {{name}}
+    {{price}}
+</li>
+        {{/each}}
+    </ul>
+</div>
+</div>
+
+ {{/with}}
+</section>
+{{!
+Цей код містить лише те, що буде виводитись в
+
+<body>
+    Адже наш layout/default.hbs має вже структуру HTML
+    }}
