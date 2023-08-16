@@ -1,0 +1,134 @@
+{{!
+Це код container файлу для index сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/"
+}}
+
+<div>
+  <h1>Facebook<span class='badge bg-secondary'></span></h1>
+</div>
+<div>
+  <h2>Users<span class='badge bg-secondary'></span></h2>
+  <ul>
+    {{#each users}}
+      <li>
+        {{id}}
+        {{name}}
+        {{gender}}
+        {{age}}
+      </li>
+      <span class='badge text-bg-success'>Friends</span>
+      <ul>
+        {{#each friends}}
+          <li>
+            {{id}}
+            {{name}}
+            {{gender}}
+            {{age}}
+          </li>
+          <span
+            class='badge text-bg-primary'
+          >Mutual_friends</span>
+          <ul>
+            {{#each mutual_friends}}
+              <li>
+                {{id}}
+                {{name}}
+                {{gender}}
+                {{age}}
+              </li>
+            {{/each}}
+          </ul>
+
+        {{/each}}
+      </ul>
+   
+ 
+<div>
+    <span class='badge text-bg-info'>Groups</span>
+       <ul>
+        {{#each groups}}
+        <li>
+          {{id}}
+          {{name}}
+          <p>
+          {{description}}
+          </p>
+        </li>
+        <ul>
+            {{#each members}}
+<li>
+    {{id}}
+    {{name}}
+    {{gender}}
+    {{age}}
+</li>
+            {{/each}}
+        </ul>
+        {{/each}}
+        </ul>
+<div>
+    <span class="badge rounded-pill text-bg-warning">id</span>
+    <ul>
+{{#with id}}
+<li>
+    {{id}}
+{{name}}
+{{gender}}
+{{age}}
+</li>
+<div>
+   <span class='badge text-bg-success'>Friends</span> 
+</div>
+<ul>
+    {{#each friends}}
+<li>
+    {{id}}
+    {{name}}
+    {{gender}}
+    {{age}}
+    
+</li>
+<span class='badge text-bg-primary' >Mutual_friends</span>
+<ul>
+    {{#each mutual_friends}}
+<li>
+    {{id}}
+    {{name}}
+    {{gender}}
+    {{age}}
+</li>
+<span class="badge rounded-pill text-bg-light">Mutual_friends</span>
+<ul>
+    {{#each mutual_friends }}
+<li>
+    {{id}}
+    {{name}}
+    {{gender}}
+    {{age}}
+</li>
+    {{/each}}
+</ul>
+
+<div>
+    <span class="badge rounded-pill text-bg-danger">groups</span>
+</div>
+ {{/each}}
+</ul>
+
+
+    {{/each}}
+</ul>
+
+{{/with}}
+    </ul>
+</div>
+
+
+ {{/each}}
+</div>
+{{!
+Цей код містить лише те, що буде виводитись в
+
+<body>
+    Адже наш layout/default.hbs має вже структуру HTML
+    }}
