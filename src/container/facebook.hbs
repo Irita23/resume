@@ -26,8 +26,7 @@
             {{age}}
           </li>
           <span
-            class='badge text-bg-primary'
-          >Mutual_friends</span>
+            class='badge text-bg-primary'>Mutual_friends</span>
           <ul>
             {{#each mutual_friends}}
               <li>
@@ -64,18 +63,11 @@
 </li>
             {{/each}}
         </ul>
+{{/each}}
+</ul>
+        
 
-        </ul>
-<div>
-    <span class="badge rounded-pill text-bg-warning">id</span>
-    <ul>
-{{#with id}}
-<li>
-    {{id}}
-{{name}}
-{{gender}}
-{{age}}
-</li>
+    
 <div>
    <span class='badge text-bg-success'>Friends</span> 
 </div>
@@ -88,220 +80,70 @@
     {{age}}
     
 </li>
-<span class='badge text-bg-primary' >Mutual_friends</span>
+
+<span class="badge text-bg-warning">mutual_friends</span>
 <ul>
     {{#each mutual_friends}}
-<li>
-    {{id}}
+    <li>
+        {{id}}
     {{name}}
-    {{gender}}
-    {{age}}
-</li>
-<span class="badge rounded-pill text-bg-light">Mutual_friends</span>
-<ul>
-    {{#each mutual_friends }}
-<li>
-    {{id}}
-    {{name}}
-    {{gender}}
-    {{age}}
-</li>
+  {{gender}}
+        {{age}}
+    </li>
     {{/each}}
 </ul>
 
+
 <div>
-    <span class="badge rounded-pill text-bg-danger">groups</span>
+    <span class="badge rounded-pill text-bg-danger">Groups</span>
     <ul>
         {{#each groups}}
 <li>
     {{id}}
     {{name}}
-</li>
-        {{/each}}
-    </ul>
-</div>
- {{/each}}
-</ul>
-
-
-    {{/each}}
-</ul>
-
-{{/with}}
-    </ul>
-</div>
-
-
- {{/each}}
-</div>
-{{/each}}
-
-
-
-<div>
-    <h1>Facebook</h1>
-    <h2>Users</h2>
-    <ul>
-        {{#each users}}
-        <li>{{id}}</li>
-        <li>{{name}}</li>
-        <li>{{gender}}</li>
-        <li>{{age}}</li>
-
-<ul>
-    {{#each friends}}
-<li>
-    {{id}}
-</li>
-<li>
-    {{name}}
-</li>
-<li>
-    {{gender}}
-</li>
-<li>
-    {{age}}
-</li>
-<ul>
-    {{#each mutual_friends}}
-<li>
-    {{id}}
-</li>
-<li>
-    {{name}}
-</li>
-<li>
-    {{gender}}
-</li>
-<li>
-    {{age}}
-</li>
-    {{/each}}
-</ul>
-
-
-    {{/each}}
-</ul>
-
-<div>
-    <h3>Groups</h3>
-    <ul>
-        {{#each groups}}
-<li>
-    {{id}}
-</li>
-<li>
-    {{name}}
-</li>
-<p>
-   {{description}} 
-</p>
-<li>
-    {{#each members}}
-<li>
-    {{id}}
-</li>
-<li>
-    {{name}}
-</li>
-<li>
-    {{gender}}
-</li>
-<li>
-    {{age}}
-</li>
-    {{/each}}
-</li>
-   {{/each}}
-    </ul>
-</div>
-
-<div>
-    {{#each friends}}
-<li>
-    {{id}}
-</li>
-<li>
-    {{name}}
-</li>
-<li>
-    {{gender}}
-</li>
-<li>
-    {{age}}
-</li>
-<ul>
-    {{#each mutual_friends}}
-<li>
-    {{id}}
-</li>
-<li>
-    {{name}}
-</li>
-<li>
-    {{gender}}
-</li>
-<li>
-    {{age}}
-</li>
-<ul>
-    {{#each mutual_friends}}
-<li>
-    {{id}}
-</li>
-<li>
-    {{name}}
-</li>
-<li>
-    {{gender}}
-</li>
-<li>
-    {{age}}
-</li>
-    {{/each}}
-</ul>
-    {{/each}}
-</ul>
-
-<div>
-    <h5> <span class="badge bg-secondary">Groups</span></h5>
-    <ul>
-        {{#each groups}}
-<li>
-    {{id}}
-</li>
-<li>
-    {{name}}
-</li>
-<li>
+    </li>
     <p>
     {{description}}
-   </p>
-</li>
-<ul>
-    {{#each members}}
+    </p>
+    <ul>
+{{#each members}}
+
 <li>
     {{id}}
-</li>
-<li>
     {{name}}
-</li>
-<li>
     {{gender}}
-</li>
-<li>
     {{age}}
 </li>
-    {{/each}}
-</ul>
-        {{/each}}
-    </ul>
-</div>
-    {{/each}}
-</div>
+
 {{/each}}
     </ul>
+
+    
+{{/each}}
+    </ul>
+
 </div>
+
+
+
+
+    {{/each}}
+</ul>
+
+
+
+
+
+{{/each}}
+
+ 
+
+
+  
+
+
+
+
 {{!
 Цей код містить лише те, що буде виводитись в
 
