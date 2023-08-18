@@ -34,16 +34,53 @@
                 {{name}}
                 {{gender}}
                 {{age}}
+ </li>
+ {{#if mutual_friends}}
+<span class='badge text-bg-primary'>Mutual_friends</span>
+          <ul>
+            {{#each mutual_friends}}
+              <li>
+                {{id}}
+                {{name}}
+                {{gender}}
+                {{age}}
               </li>
             {{/each}}
+          </ul>{{/if}}
+  {{/each}}
           </ul>
 
-        {{/each}}
-      </ul>
-   
- 
-<div>
-    <span class='badge text-bg-info'>Groups</span>
+<div>{{#if groups}}
+    <span class="badge rounded-pill text-bg-danger">Groups</span>
+    <ul>
+        {{#each groups}}
+<li>
+    {{id}}
+    {{name}}
+    <p>
+    {{description}}
+    </p>
+    </li>
+    <ul>
+{{#each members}}
+
+<li>
+    {{id}}
+    {{name}}
+    {{gender}}
+    {{age}}
+</li>
+{{/each}}
+    </ul>
+ {{/each}}
+    </ul>{{/if}}
+
+</div>
+ {{/each}}
+</ul>
+
+<div>{{#if groups}}
+    <span class="badge rounded-pill text-bg-danger">Groups</span>
        <ul>
         {{#each groups}}
         <li>
@@ -64,84 +101,11 @@
             {{/each}}
         </ul>
 {{/each}}
-</ul>
-        
+</ul>{{/if}}
+  </div>    
 
-    
-<div>
-   <span class='badge text-bg-success'>Friends</span> 
-</div>
-<ul>
-    {{#each friends}}
-<li>
-    {{id}}
-    {{name}}
-    {{gender}}
-    {{age}}
-    
-</li>
-
-<span class="badge text-bg-warning">mutual_friends</span>
-<ul>
-    {{#each mutual_friends}}
-    <li>
-        {{id}}
-    {{name}}
-  {{gender}}
-        {{age}}
-    </li>
-    {{/each}}
-</ul>
-
-
-<div>
-    <span class="badge rounded-pill text-bg-danger">Groups</span>
-    <ul>
-        {{#each groups}}
-<li>
-    {{id}}
-    {{name}}
-    </li>
-    <p>
-    {{description}}
-    </p>
-    <ul>
-{{#each members}}
-
-<li>
-    {{id}}
-    {{name}}
-    {{gender}}
-    {{age}}
-</li>
-
-{{/each}}
-    </ul>
-
-    
-{{/each}}
-    </ul>
-
-</div>
-
-
-
-
-    {{/each}}
-</ul>
-
-
-
-
-
-{{/each}}
-
- 
-
-
-  
-
-
+  {{/each}}
+      </ul>
 
 
 {{!
