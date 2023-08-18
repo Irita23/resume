@@ -1,0 +1,116 @@
+{{!
+Це код container файлу для index сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/"
+}}
+
+<div>
+  <h1>Facebook<span class='badge bg-secondary'></span></h1>
+</div>
+<div>
+  <h2>Users<span class='badge bg-secondary'></span></h2>
+  <ul>
+    {{#each users}}
+      <li>
+        {{id}}
+        {{name}}
+        {{gender}}
+        {{age}}
+      </li>
+      <span class='badge text-bg-success'>Friends</span>
+      <ul>
+        {{#each friends}}
+          <li>
+            {{id}}
+            {{name}}
+            {{gender}}
+            {{age}}
+          </li>
+          <span
+            class='badge text-bg-primary'>Mutual_friends</span>
+          <ul>
+            {{#each mutual_friends}}
+              <li>
+                {{id}}
+                {{name}}
+                {{gender}}
+                {{age}}
+ </li>
+ {{#if mutual_friends}}
+<span class='badge text-bg-primary'>Mutual_friends</span>
+          <ul>
+            {{#each mutual_friends}}
+              <li>
+                {{id}}
+                {{name}}
+                {{gender}}
+                {{age}}
+              </li>
+            {{/each}}
+          </ul>{{/if}}
+  {{/each}}
+          </ul>
+
+<div>{{#if groups}}
+    <span class="badge rounded-pill text-bg-danger">Groups</span>
+    <ul>
+        {{#each groups}}
+<li>
+    {{id}}
+    {{name}}
+    <p>
+    {{description}}
+    </p>
+    </li>
+    <ul>
+{{#each members}}
+
+<li>
+    {{id}}
+    {{name}}
+    {{gender}}
+    {{age}}
+</li>
+{{/each}}
+    </ul>
+ {{/each}}
+    </ul>{{/if}}
+
+</div>
+ {{/each}}
+</ul>
+
+<div>{{#if groups}}
+    <span class="badge rounded-pill text-bg-danger">Groups</span>
+       <ul>
+        {{#each groups}}
+        <li>
+          {{id}}
+          {{name}}
+          <p>
+          {{description}}
+          </p>
+        </li>
+        <ul>
+            {{#each members}}
+<li>
+    {{id}}
+    {{name}}
+    {{gender}}
+    {{age}}
+</li>
+            {{/each}}
+        </ul>
+{{/each}}
+</ul>{{/if}}
+  </div>    
+
+  {{/each}}
+      </ul>
+
+
+{{!
+Цей код містить лише те, що буде виводитись в
+
+<body>
+    Адже наш layout/default.hbs має вже структуру HTML
+    }}
