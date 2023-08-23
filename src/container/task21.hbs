@@ -1,0 +1,146 @@
+{{!
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+}}
+
+<div>
+  <div class="card">
+    <div class='card-body'>
+      <div class="card">
+<div class='card-body'>
+  {{#with heading}}
+  {{#with main}}
+  <h1>{{title}}</h1>
+  <p>
+{{text}}
+  </p>
+  {{#with button_text}}
+ <div><button class='btn btn-primary btn-sm'>{{solid}}</button></div>
+    <br />
+
+    <div><button class='btn-outline-primary btn-lg'>{{outline}}</button></div>
+
+<br>
+  {{/with}}
+  {{/with}}
+ 
+   </div>  
+</div>
+
+<br>
+{{#with second}}
+
+<div class="card">
+  <div class="card-body">
+    <h2>{{title}}</h2>
+    <p class='text-secondary'>{{text}}</p>
+    {{#with button_text}}
+   <div><button class='btn btn-secondary'>{{solid}}<button></div>
+      <br>
+
+     <div><button  class="btn btn-outline-secondary">{{outline}}</button> </div>
+{{/with}}
+ <br>
+ </div>
+ {{/with}}
+ </div>
+
+
+  <br>
+  <div class="card">
+  <div class=" card-body">
+  {{#with subblock}}
+   <h3>{{title}}</h3>
+   <p >{{text}}</p>
+   {{#with button_text}}
+   <div><button type="button" class="btn btn-dark btn-sm">{{solid}}</button></div>
+   <br>
+   <div><button  class="btn btn-outline-dark btn-sm">{{outline}}</button></div>
+   
+   </div>
+   {{/with}}
+  </div>
+ {{/with}}
+<br>
+{{/with}}
+</div>
+<br>
+</div>
+<br>
+<br>
+<br>
+{{#with nested_display}}
+
+<div class="card">
+<div class="card-body">
+
+<h4 class='text-center text-uppercase'>{{title}}</h4>
+<div class="card">
+<div class="card-body">
+
+ 
+   {{#with children_display}}
+ <h5>{{title}}</h5>
+  <p>{{text}} </p>
+{{#with button}}
+ <div> <button  class="btn btn-outline-warning btn-sm">{{text}}</button></div>
+ {{/with}}
+ {{/with}}
+ </div>
+ 
+</div>
+<br>
+
+<h6>{{header_text}}</h6>
+<br>
+<div>
+  <div>{{#with button}}</div>
+<button class="btn btn-info">{{text}}</button></div>
+
+</div>
+ {{/with}}
+{{/with}}
+
+<br>
+
+{{#with paragraf}}
+<div class="card">
+  <div class="card-body">
+    
+<p class='lead'>{{title}}</p>
+
+<p>{{text}}</p>
+
+<br>
+
+{{#with button}}
+<a class='btn btn-link' href={{url}} role='button'>{{text}} </a>
+{{/with}}
+<br>
+
+<div class="card">
+  <div class="card-body">
+<ul>
+{{#each list_name}}
+<li>
+ <a href={{url}}>{{text}}</a> 
+ 
+</li>
+{{/each}}
+</ul>
+   {{/with}}
+  </div>
+
+</div>
+
+</div>
+ 
+</div>
+
+
+
+
+{{!--
+Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+Адже наш layout/default.hbs має вже структуру HTML
+--}}
