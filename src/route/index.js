@@ -1167,13 +1167,6 @@ router.get('/task22', function (req, res) {
 
 
 
-
-
-
-
-
-
-
 // router.get Створює нам один ентпоїнт
 
 //           ↙ тут вводимо шлях (PATH) до сторінки
