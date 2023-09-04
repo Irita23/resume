@@ -1,0 +1,140 @@
+{{!
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+}}
+
+<main class='m-5'>
+    <div class="row">
+    <div class='card col-12'>
+        <div class='nav'>
+            {{#with navigation}}
+            {{#each links}}
+
+            <div class='col-2'>
+                <a href='#' class='nav-link {{#if @last}}disabled{{/if}}'>
+
+                    {{text}}
+                </a>
+            </div>
+
+            {{/each}}
+
+            {{/with}}
+        </div>
+    </div>
+</div>
+    {{#with newsBlock}}
+    <h1 class='m-5 text-center'>{{title}}</h1>
+    <div class='row'>
+        {{#each cards}}
+        <div class='card text-bg-dark col-3 m-1'>
+
+            <div class='card-header'>{{title}}
+                {{#if isTop}}
+                <span class='badge text-bg-danger rounded-pill'>Top
+                </span>
+                {{/if}}
+                {{#if isNew}}
+                <span class='badge text-bg-success roundet-pill'>New</span>
+                {{/if}}
+            </div>
+            <p>
+                {{description}}
+            </p>
+
+        </div>
+        {{/each}}
+    </div>
+    {{/with}}
+    <hr class="m-5">
+    <div class='row'>
+        {{#with goodsBlock}}
+        <div class='nav nav-tabs'>
+            {{#each tabs}}
+
+            <a class="nav-link {{#if isActive}}active{{/if}}
+     {{#if isDisabled}}disabled{{/if}}">{{text}}</a>
+
+            {{/each}}
+        </div>
+        {{#each cards}}
+        <div class="card col-4 mt-5 p-1">
+            <img class="card-img-top" src="https://picsum.photos/400/200">
+            <div class="card-body">
+                <div class="card-title">{{title}}
+                    {{#if isHot}}
+                    <span class="badge text-bg-warning roundet-pill">Hot</span>
+                    {{/if}}
+             
+                {{#if isNew}}
+
+                <span class="badge text-bg-info roundet-pill">New</span>
+                {{/if}}
+            </div>
+           <p class="text-muted ">{{description}}</p> 
+        </div>
+    </div>
+    {{/each}}
+    {{/with}}
+    </div>
+    <hr class="m-5">
+    <section class="m-5">
+<div class="row">
+    {{#with subscribe}}
+<div class="card col-12 text-bg-dark">
+<div class="card-header"><h2>{{header}}</h2></div>
+<p>{{description}}</p>
+<ul class="list-group">
+{{#each buttons}}
+<p>
+ <button class=" btn btn-primary">{{text}}</button>
+</p>
+  {{/each}}
+</ul>
+</div>
+    {{/with}}
+</div>
+</section>
+<section class="m-5" >
+<div class="row">
+    {{#with service}} 
+<div class="card col-12 text-bg-success">
+<div class="text-center text-capitalize">
+<div class="card-body text-center">
+     <h2>{{title}}</h2>
+<p>
+        {{description}}
+    </p>
+    {{#each buttons}}
+    <a class="btn btn-primary" href="#" role="button">{{text}}</a>
+   
+    {{/each}}
+    
+    </div>
+
+    </div>
+
+</div>
+</div>
+    {{/with}}
+</div>
+</section >
+<hr class="m-5">
+
+<footer>
+<div class="nav">
+ {{#each footer}}
+<div class="nav-item col-2">
+          
+             {{#each this}}
+                    <a  class="nav-link {{#if @last}} disabled {{/if}}"
+                    href={{url}}>{{text}}</a>
+             {{/each}}
+                      
+                </div>
+   {{/each}}
+</div>
+</footer>
+
+ 
+</main>
