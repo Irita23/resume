@@ -1,0 +1,96 @@
+{{!
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+}}
+
+<main class='m-5'>
+    <div class='row'>
+        <div class='card col-12'>
+            <div class='nav'>
+                {{#with navigation}}
+
+                {{#each links}}
+                <a href='#' class='nav-link
+            {{#unless href}}disabled{{/unless}}'>{{text}}</a>
+
+                {{/each}}
+
+                {{/with}}
+            </div>
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="col-7">
+            <h1>{{header}}</h1>
+        </div>
+
+        {{#with contacts_data}}
+        <h2 class="mt-5">{{title}}</h2>
+        {{#each buttons}}
+        <button type="button" class="btn col-3 ms-3 
+{{#if isPrimary}}btn-warning{{/if}} 
+{{#if isOutline}}btn-outline-warning{{/if}}">{{text}}</button>
+
+        {{/each}}
+    </div>
+
+    <div class="col-8">
+        <div class="row">
+            <div class="col-4 mx-1">
+                {{#with form}}
+                {{#with input}}
+                {{#with surname}}
+                <label class="form-label mt-3">{{label}}</label>
+                <input placeholder={{placeholder}} class="form-control">
+                <div class="form-text">{{caption}}</div>
+                {{/with}}
+            </div>
+            <div class="col-4 mx-1">
+                {{#with name}}
+                <label class="form-label mt-3">{{label}}</label>
+                <input class="form-control" placeholder={{placeholder}}>
+                <div class="form-text">{{caption}}</div>
+                {{/with}}
+            </div>
+            <div class="col-4 mx-1">
+                {{#with phone}}
+                <label class="form-label mt-3 ">{{label}}</label>
+                <input class="form-control" placeholder={{placeholder}}>
+                <div class="form-text">{{caption}}</div>
+                {{/with}}
+            </div>
+            <div class="col-4 mx-1">
+                {{#with email}}
+                <label class="form-label mt-3">{{label}}</label>
+                <input class="form-control" placeholder={{placeholder}}>
+                <div class="form-text">{{caption}}</div>
+                {{/with}}
+            </div>
+            {{/with}}
+            <hr class="m-3">
+            {{#each switch}}
+            <div class="form-check form-switch m-2">
+                <label class="form-check-label">{{text}}</label>
+                <input name="food" class="form-check-input" type="radio" {{#if isActive}}checked{{/if}}>
+            </div>
+            {{/each}}
+            {{/with}}
+
+            {{/with}}
+        </div>
+    </div>
+    <div class="col-4">
+        {{#each action_block}}
+        <div class="row">
+            <div class="col-4">
+                <label class="form-label">
+                    <input class="form-control" {{#if isSuccess}}success{{/if}}>
+
+
+
+                </label>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</main>
