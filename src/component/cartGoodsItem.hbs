@@ -1,0 +1,27 @@
+<div class="card m-3">
+        <div class="row">
+            <div class="col-2">
+                <img class="card-img-top m-2" src="https://picsum.photos/110/110">
+            </div>
+            <div class="col-4">
+                <h5 class="mt-2">{{name}}</h5>
+                <p>{{description}}</p>
+            </div>
+
+            <div class="col-2 ">{{#with price}}
+                <p class="m-3"> {{title}}</p>
+                <p class="m-3">{{value}}</p>
+                {{/with}}
+            </div>
+            <div class="col-1 m-4">
+                {{amount}}
+            </div>
+            <div class="col-2">
+                {{#each buttons}}
+                <button type="button" class="btn mt-4
+ {{#if isPrimary}}btn-primary{{/if}} 
+{{#if isDanger}}btn-outline-danger{{/if}}">{{text}}</button>
+                {{/each}}
+            </div>
+        </div>
+    </div> 
