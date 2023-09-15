@@ -1,0 +1,131 @@
+{{!
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+}}
+<main class="m-5">
+    <div class='row'>
+        <div class='card m-3'>
+            {{#with navigation}}
+            <ul class='nav'>
+
+                {{#each links}}
+                <li class="nav-item">
+                    <a href="#" class="nav-link {{#if @last}}disabled{{/if}}">{{text}}</a>
+                </li>
+                {{/each}}
+            </ul>
+
+            {{/with}}
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="card-header m-4">
+            {{#with header}}
+            <h1>{{title}}</h1>
+            {{#with button}}
+            <button class="btn-outline-secondary col-3 mt-2" href="#">{{text}}</button>
+            {{/with}}
+            {{/with}}
+        </div>
+    </div>
+    <hr class="mt-5">
+
+
+    {{#each goodsBlock}}
+    <div class="card m-3">
+        <div class="row">
+            <div class="col-2">
+                <img class="card-img-top m-2" src="https://picsum.photos/110/110">
+            </div>
+            <div class="col-4">
+                <h5 class="mt-2">{{name}}</h5>
+                <p>{{description}}</p>
+            </div>
+
+            <div class="col-2 ">{{#with price}}
+                <p class="m-3"> {{title}}</p>
+                <p class="m-3">{{value}}</p>
+                {{/with}}
+            </div>
+            <div class="col-1 m-4">
+                {{amount}}
+            </div>
+            <div class="col-2">
+                {{#each buttons}}
+                <button type="button" class="btn mt-4
+ {{#if isPrimary}}btn-primary{{/if}} 
+{{#if isDanger}}btn-outline-danger{{/if}}">{{text}}</button>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+    {{/each}}
+    <hr class="m-3">
+    {{#with total}}
+    <h4 class="m-3">{{title}}</h4>
+    <h3 class="m-3">{{amount}}</h3>
+    <p class="m-3">{{delivery}}</p>
+    <div class="col-3">
+        {{#each buttons}}
+        <button type="button" class="btn mt-3 ms-3
+{{#if isSuccess}}btn-success{{/if}}
+{{#if isOutline}}btn-outline-success{{/if}}">{{text}}</button>
+    </div>
+    {{/each}}
+    </div>
+    {{/with}}
+    <hr class="m-3">
+    {{#with goodsOtherBlock}}
+<h4 class="mt-5 text-center">{{title}}</h4>
+<div class="row">
+
+{{#each cards}}
+<div class=" card col-4  mt-3">
+   
+<img class="card-img-top " src='https://picsum.photos/400/200'>
+<div class="card-body">
+    <div class="card-title pt-1">{{title}}
+        {{#if isHot}}
+        <span class="badge text-bg-warning rounded-pill">Hot</span>
+        {{/if}}
+        {{#if idNew}}
+        <span class="badge text-bg-primary rounded-pill">New</span>
+        {{/if}}
+    </div>
+   <p>
+    {{description}}
+   </p> 
+</div>
+</div>
+{{/each}}
+</div>
+{{/with}}
+<hr class="m-3">
+<div class="row g-5 ms-2">
+  <div class="card text-bg-dark ps-2"> 
+{{#with subscribe}}
+<h2>{{header}}</h2>
+<p>{{description}}</p>
+<div class="col-3">
+{{#each buttons}}
+<button type="button" class="btn btn-primary m-1">{{text}}</button>  
+{{/each}}
+</div>
+{{/with}}
+</div>
+</div>
+<hr class="m-3"> 
+<footer>
+ <div class="nav"> 
+{{#each footer}}  
+<div class="nav-item col-2">
+    {{#each this}}
+<a class="nav-link {{#if @last}}disabled{{/if}}"
+ href={{url}}>{{text}}</a>
+{{/each}}
+</div>
+ {{/each}} 
+ </div>  
+</footer>
+</main>
