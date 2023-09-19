@@ -1,0 +1,28 @@
+ <div class="row">
+            <div class="col-4">
+                <p class="pt-2">{{number}}</p>
+                <p class="pt-1 ">{{status}}</p>
+            </div>
+            <div class="col-2">
+                {{#with amount}}
+                <p class="pt-2">{{title}}</p>
+                <p class="pt-1">{{value}}</p>
+                {{/with}}
+            </div>
+            <div class="col-4">
+                <div class="row">
+                    {{#each images}}
+                    <div class="col-4">
+                        <img class="card-img-top m-2 " src="https://picsum.photos/110/100">
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+            <div class="col-2">
+                {{#with button}}
+                <button type="button" class="btn
+{{#if isPrimary}}btn-primary{{/if}} mt-3" href="#">{{text}}</a>
+                    {{/with}}
+            </div>
+        </div>
+        
