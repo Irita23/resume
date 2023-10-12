@@ -3,114 +3,137 @@
 в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/"
 }}
 
-<div>
-  <h1>Facebook<span class='badge bg-secondary'></span></h1>
+<div class="m-3">
+  <h1 class='text-primary'>facebook</h1>
 </div>
-<div>
+<div class="m-3">
   <h2>Users<span class='badge bg-secondary'></span></h2>
-  <ul>
+  <div class=" m-3">
+    
     {{#each users}}
-      <li>
+ 
+    <p>
+      {{id}}
+      {{name}}
+      {{gender}}
+      {{age}}
+    </p>
+    <span class='badge text-bg-success col-1'>Friends</span>
+    
+      {{#each friends}}
+      <p>
         {{id}}
         {{name}}
         {{gender}}
         {{age}}
-      </li>
-      <span class='badge text-bg-success'>Friends</span>
-      <ul>
-        {{#each friends}}
-          <li>
+      </p>
+      <span class='badge text-bg-primary'>Mutual_friends</span>
+      <div>
+        {{#each mutual_friends}}
+        <p>
+          {{id}}
+          {{name}}
+          {{gender}}
+          {{age}}
+        </p>
+        {{#if mutual_friends}}
+        <span class='badge text-bg-primary'>Mutual_friends</span>
+        </di>
+        {{#each mutual_friends}}
+        <p>
+          {{id}}
+          {{name}}
+          {{gender}}
+          {{age}}
+        </p>
+        {{/each}}
+      </div>{{/if}}
+      {{/each}}
+    
+   
+
+<div class="form-check form-switch">
+  <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
+  <label class="form-check-label" for="flexSwitchCheckChecked">Groups</label>
+</div>
+    <div>{{#if groups}}
+     
+      <div class="card  col-6 m-3 p-2">
+        {{#each groups}}
+        <p>
+          {{id}}
+          <button type="button" class="btn btn-success mt-2">{{name}}</button>
+        <p class="alert alert-success" role="alert">
+          {{description}}
+        </p>
+        </p>
+        <div>
+          {{#each members}}
+
+          <p>
             {{id}}
             {{name}}
             {{gender}}
             {{age}}
-          </li>
-          <span
-            class='badge text-bg-primary'>Mutual_friends</span>
-          <ul>
-            {{#each mutual_friends}}
-              <li>
-                {{id}}
-                {{name}}
-                {{gender}}
-                {{age}}
- </li>
- {{#if mutual_friends}}
-<span class='badge text-bg-primary'>Mutual_friends</span>
-          <ul>
-            {{#each mutual_friends}}
-              <li>
-                {{id}}
-                {{name}}
-                {{gender}}
-                {{age}}
-              </li>
-            {{/each}}
-          </ul>{{/if}}
-  {{/each}}
-          </ul>
+          </p>
+          {{/each}}
+        </div>
+        {{/each}}
+      </div>{{/if}}
 
-<div>{{#if groups}}
-    <span class="badge rounded-pill text-bg-danger">Groups</span>
-    <ul>
-        {{#each groups}}
-<li>
-    {{id}}
-    {{name}}
-    <p>
-    {{description}}
-    </p>
-    </li>
-    <ul>
-{{#each members}}
+    </div>
+    {{/each}}
+  </div>
 
-<li>
-    {{id}}
-    {{name}}
-    {{gender}}
-    {{age}}
-</li>
-{{/each}}
-    </ul>
- {{/each}}
-    </ul>{{/if}}
 
+
+
+  <div class="m-5">{{#if groups}}
+
+<div class="form-check form-switch">
+  <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
+  <label class="form-check-label" for="flexSwitchCheckChecked">Groups</label>
 </div>
- {{/each}}
-</ul>
-
-<div>{{#if groups}}
-    <span class="badge rounded-pill text-bg-danger">Groups</span>
-       <ul>
-        {{#each groups}}
-        <li>
+    
+   
+    <div class="card  col-6 m-3 p-2 ">
+      {{#each groups}}
+      <p>
+        {{id}}
+        <button type="button" class="btn btn-warning mt-2">{{name}}</button>
+        
+      <p class="alert alert-warning" role="alert">
+        {{description}}
+      </p>
+      </p>
+      <div>
+        {{#each members}}
+        <p>
           {{id}}
           {{name}}
-          <p>
-          {{description}}
-          </p>
-        </li>
-        <ul>
-            {{#each members}}
-<li>
-    {{id}}
-    {{name}}
-    {{gender}}
-    {{age}}
-</li>
-            {{/each}}
-        </ul>
-{{/each}}
-</ul>{{/if}}
-  </div>    
+          {{gender}}
+          {{age}}
+        </p>
+        {{/each}}
+      </div>
+      {{/each}}
+    </div>{{/if}}
+  </div>
 
   {{/each}}
-      </ul>
+
+
+ 
+</div>
+
+
+
+
 
 
 {{!
 Цей код містить лише те, що буде виводитись в
 
 <body>
-    Адже наш layout/default.hbs має вже структуру HTML
-    }}
+  Адже наш layout/default.hbs має вже структуру HTML
+  }}

@@ -2,149 +2,177 @@
 Це код container файлу для summary сторінки,
 в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
 --}}
+<div class="row">
+    <div class="ms-3  col-3">
+        In progress
+        <div class="card text-bg-secondary">
+            <div class="card-body">
+                <img class="card-img-top" src="https://picsum.photos/400/200">
 
-<div>
-    In progress
-</div>
-<div>
-    {{#with person}}
-    <h1>{{name}}</h1>
-    <div>{{age}}</div>
-    <div>{{gender}}</div>
+                {{#with person}}
+                <h3>{{name}}</h3>
+                <div>{{age}}</div>
+                <div>{{gender}}</div>
 
-    {{#with address}}
-    <div>
-        <address>{{street}} {{city}} {{state}} {{zip}} {{country}}
-        </address>
+                {{#with address}}
+                <div>
+                    <address>{{street}} {{city}} {{state}} {{zip}} {{country}}
+                    </address>
+                </div>
+                {{/with}}
+            </div>
+        </div>
+
     </div>
-    {{/with}}
-    <hr>
+
     <br>
-    <ul>
-        {{#each education}}
-        <li>
-            <div>{{degree}}</div>
+    <div class="col-8 ">
+        <div class="row">
+            {{#each education}}
+
+            <div class="gy-4">{{degree}}</div>
             <div>{{major}}</div>
             <div><q>{{university}}</q></div>
             <div>{{graduationYear}}</div>
-        </li>
-        {{/each}}
-    </ul>
-    <br>
-    <ul>
-        {{#each workExperience}}
-        <li>
-            <div>{{company}}</div>
-            <div>{{title}}</div>
-            <div>{{startDate}}</div>
-            <div>{{endDate}} </div>
-        </li>
 
-        <br>
-        <ul>
-            {{#each responsibilities}}
-            <li><q>{{this}}</q></li>
             {{/each}}
-        </ul>
 
-        <br>
+            <br>
+
+            {{#each workExperience}}
+            <div class="mt-1">
+                <div>{{company}}</div>
+                <div>{{title}}</div>
+                <div>{{startDate}}</div>
+                <div>{{endDate}} </div>
+            </div>
+
+
+        </div>
+
+        <div>
+            {{#each responsibilities}}
+            <div><q>{{this}}</q></div>
+            {{/each}}
+        </div>
+    </div>
+
+    <div class="ms-3">
         <div>{{year_founded }}</div>
         <div>{{industry}}</div>
-        <br>
+    </div>
+
+</div>
+<hr class="m-5">
+
+<div class="row">
+   
+
         <ul>
             {{#each employees}}
-            <li>
+            <div>
                 <h2>
-                    <div>{{name}}</div>
+                    <div class="m-3">{{name}}</div>
                 </h2>
-                <div>{{position}}</div>
-                <div>{{department}}</div>
-            </li>
-            <ul>
-                {{#each projects}}
-                <li>
-                    <strong>
-                        <div>{{name}}</div>
-                </li></strong>
-                <div>{{description}}</div>
-                <div>{{status}}</div>
-                </li>
-            </ul>
+                <div class="ms-3">{{position}}</div>
+                <div class="ms-3">{{department}}</div>
+            </div>
             <br>
-            <ul>
-                {{#each teams}}
-                <li>
-                    <b>
-                        <div>{{team_name}}</div>
-                    </b>
-                </li>
-                {{#each team_leader}}
-                <li>
-                    <div>{{this}}</div>
-                </li>
-                {{/each}}
-                <br>
-                <ul>
-                    {{#each team_members}}
-                    <li>
-                        <b>
-                            <div>{{name}}</div>
-                        </b>
-                        <div>{{title}}</div>
-                        <div>{{email}}</div>
-                </ul>
-
-                <ul>
-                    {{#each skills}}
-                    <li>
-                        <div>{{this}}</div>
-                    </li>
-                    {{/each}}
-                </ul>
-                <br>
-                <ul>
-                    {{#each projects}}
-                    <li>
-                        <b>
-                            <div>{{name}}</div>
-                        </b>
-                        <div><q>{{description}}</q></div>
-                        {{#each technologies}}
-                    <li>
-                        <div>{{this}}</div>
-                    </li>
-                    {{/each}}
+            <div class="row ">
+                <div class="card col-4 me-3 ms-4 pt-2">
                     <ul>
-                        {{#each team_members}}
+                        {{#each projects}}
+                        <div>
+                            <strong>
+                                <div>{{name}}</div>
+                        </div></strong>
+                        <div>{{description}}</div>
+                        <div>{{status}}</div>
+                        </li>
+                    </ul>
+                    <br>
+                    <ul>
+                        {{#each teams}}
+                        <li>
+                            <b>
+                                <div class="text-success">{{team_name}}</div>
+                            </b>
+                        </li>
+                        {{#each team_leader}}
+                        <li>
+                            <div>
+                                {{this}}
+                            </div>
+
+                        </li>
+                        {{/each}}
+                        <br>
+                        <ul>
+                            {{#each team_members}}
+                            <li>
+                                <b>
+                                    <div>{{name}}</div>
+                                </b>
+                                <div>{{title}}</div>
+
+                                <a class="navbar -link" href="#">{{email}}</a>
+                        </ul>
+
+                        <ul>
+                            {{#each skills}}
+                            <li>
+                                <div>{{this}}</div>
+                            </li>
+                            {{/each}}
+                        </ul>
+                </div>
+                <br>
+                <div class="card col-4 pt-2">
+                    <ul>
+                        {{#each projects}}
                         <li>
                             <b>
                                 <div>{{name}}</div>
                             </b>
-                            <div>{{title}}</div>
+                            <div><q>{{description}}</q></div>
+                            {{#each technologies}}
+                        <li>
+                            <div>{{this}}</div>
                         </li>
                         {{/each}}
-                    </ul>
-                    </li>
-                    {{/each}}
-                    </li>
-
-                    {{/each}}
-                </ul>
-                </li>
-            </ul>
+                        <ul>
+                            {{#each team_members}}
+                            <li>
+                                <b>
+                                    <div>{{name}}</div>
+                                </b>
+                                <div>{{title}}</div>
+                            </li>
+                            {{/each}}
+                        </ul>
+                        </li>
+                        {{/each}}
+                        </li>
+                </div>
+            </div>
             {{/each}}
-        </ul>{{/each}}
-
+        </ul>
+        </li>
+        </ul>
         {{/each}}
+        </ul>{{/each}}
+    </div>
+    {{/each}}
     </ul>
     </li>
     {{/each}}
     </ul>
 
 
-    {{/with}}
-</div>
+{{/with}}
 
+
+</div>
 {{!--
 Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
 Адже наш layout/default.hbs має вже структуру HTML

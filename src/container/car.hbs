@@ -4,270 +4,293 @@
 }}
 
 <div>
+  <div class="text-center">
+    <h1>{{make}}{{model}} </h1>
+    <h2>{{year}}</h2>
+    <h3>{{color}}</h3>
+  </div>
+  <div class="row m-5">
 
-  <h1>{{make}}{{model}} </h1>
-  <h2>{{year}}</h2>
-  <h3>{{color}}</h3>
-</div>
-<br>
-<div>
- <p>{{#with features}}
-    <span
-      class='badge rounded-pill text-bg-danger'
-    >features</span>
+    <div class="col-5">
+      <img class="card-img-top" src="https://picsum.photos/400/200">
+    </div>
     <br>
-    <div>
-	<p>{{#with interior}}</p>
-        <span
-          class='badge rounded-pill text-bg-primary'
-        >interior</span>
 
-         <div> 
-			
-		   <span class="badge rounded-pill text-bg-secondary">seats</span>
+    <div class="col-6 row">
+      <p>{{#with features}}
+      <div class="col-3 ">
 
-  <ul>
-   {{#with seats}}
-<li>{{material}}</li>
-          <li>{{color}}</li>
-		<li>{{#if heated}} 
- heated
- {{/if}}
-      </li>
-      <li>{{#if ventilated}} 
-        ventilated
-        {{/if}}
-      </li>
-            
-          
-		  {{/with}}
-		  </ul>
-		 
+        <span class='badge rounded-pill text-bg-danger'>features</span>
+        <br>
+        <div>
+          <p>{{#with interior}}</p>
+          <span class='badge rounded-pill text-bg-primary mb-3'>interior</span>
+
+          <div>
+
+            <span class="badge rounded-pill text-bg-secondary">seats</span>
+
+            <ul>
+              {{#with seats}}
+              <li>{{material}}</li>
+              <li>{{color}}</li>
+              <li>{{#if heated}}
+                heated
+                {{/if}}
+              </li>
+              <li>{{#if ventilated}}
+                ventilated
+                {{/if}}
+              </li>
+
+              {{/with}}
+            </ul>
+
+          </div>
+
         </div>
 
-     </div>
+        <div>
+          <span class="badge rounded-pill text-bg-secondary">dashboard</span>
 
-  </div>
+          {{#with dashboard }}
+          <ul>
+            <li>{{material}}</li>
+            <li> {{color}}</li>
+          </ul>
+          <b>
+            <div>display</div>
+          </b>
+
+          <ul>
+            {{#with display}}
+            <li>{{type}}</li>
+            <li>{{size}}</li>
+            <li>{{resolution}}</li>
+            <li>{{#if touchscreen}}
+              touchscreen
+              {{/if}}
+            </li>
+            {{/with}}
+          </ul>
+        </div>
+        {{/with}}
 
 
-<div>
-<span class="badge rounded-pill text-bg-secondary">dashboard</span>
 
-  {{#with dashboard }}
-  <ul>
-    <li>{{material}}</li>
-   <li> {{color}}</li>
-</ul>
-<b><div>display</div></b>
+        <div>
+          <span class="badge rounded-pill text-bg-warning">audio</span>
+          {{#with audio}}
+          <ul>
+            <li>{{system}}</li>
+            <li>{{speakers}}</li>
+            <li>{{#if subwoofer}}
+              subwoofer
+              {{/if}}
+            </li>
+            <li>{{#if bluetooth}}
+              bluetooth
+              {{/if}}
+            </li>
+            <li>{{#if USB}}
+              USB
+              {{/if}}
+            </li>
+            {{/with}}
+          </ul>
+        </div>
+        {{/with}}
 
- <ul>
- {{#with display}} 
-   <li>{{type}}</li>
-   <li>{{size}}</li> 
-   <li>{{resolution}}</li>
-   <li>{{#if touchscreen}}
-    touchscreen
-    {{/if}}
-     </li>
-    {{/with}}
-    </ul>
+
+      </div>
+      <div class="col-4">
+
+        <p>{{#with exterior}}</p>
+        <span class="badge rounded-pill text-bg-primary mb-3">exterior</span>
+
+        <div>
+          <select class="form-select" aria-label="Default select example">
+            <option selected>wheels</option>
+
+            <option value="{{size}}">18</option>
+            <option value="{{type}}">alloy</option>
+            <option value="{{color}}">silver</option>
+
+
+          </select>
+        </div>
+
+        <div><span class="badge rounded-pill text-bg-warning mt-3">headlights</span></div>
+        <ul>
+          {{#with headlights}}
+          <li>{{type}}</li>
+          <li>{{brightness}}</li>
+          <li>{{#if automatic}}
+            automatic
+            {{/if}}
+          </li>
+          {{/with}}
+        </ul>
+
+        <div>
+          <span class="badge rounded-pill text-bg-warning">sunroof</span>
+        </div>
+        <ul>
+          {{#with sunroof}}
+          <li>{{type}}</li>
+          <li>{{size}}</li>
+          <li>{{#if automatic}}
+            automatic
+            {{/if}}
+          </li>
+          {{/with}}
+        </ul>
+        {{/with}}
+
+
+        <div class="col-3">
+          <div>{{#with safety}}
+            <span class="badge rounded-pill text-bg-primary mb-3 ">safety</span>
+          </div>
+
+
+
+          <div><span class="badge rounded-pill text-bg-secondary">airbags</span> </div>
+          <ul>
+            {{#with airbags}}
+            <li>{{front}}</li>
+            <li>{{side}}</li>
+            <li>{{knee}}</li>
+            <li>{{rear}}</li>
+            {{/with}}
+          </ul>
+
+          <div><span class="badge rounded-pill text-bg-secondary">assistance</span></div>
+
+          <ul>
+            {{#with assistance}}
+            <li>
+              {{#if blind_spot_monitoring}}
+              blind_spot_monitoring
+              {{/if}}
+            </li>
+            <li>
+              {{#if rear_cross_traffic_alert}}
+              rear_cross_traffic_alert
+              {{/if}}
+            </li>
+            <li>
+              {{#if adaptive_cruise_control}}
+              adaptive_cruise_control
+              {{/if}}
+            </li>
+            <li>
+              {{#if collision_warning}}
+              collision_warning
+              {{/if}}
+            </li>
+            {{/with}}
+          </ul>
+
+          {{/with}}
+          {{/with}}
+        </div>
+      </div>
+      <div class="col-3">
+        <p>
+          {{#with engine}}
+          <span class="badge rounded-pill text-bg-danger">engine</span>
+        <div>
+          <span class="badge rounded-pill text-bg-primary">type</span>
+        </div>
+        <div>{{type}}</div>
+        <div>
+          <span class="badge rounded-pill text-bg-warning">displacement</span>
+        </div>
+        <div>{{displacement}}</div>
+        <div>
+          <span class="badge rounded-pill text-bg-success">horsepower</span>
+        </div>
+        <div>{{horsepower}}</div>
+        <div>
+          <span class="badge rounded-pill text-bg-info">torque</span>
+        </div>
+        <div>{{torque}}</div>
+        <br>
+        <div>
+          <span class="badge rounded-pill text-bg-secondary">transmission</span>
+          <ul>{{#with transmission}}
+            <li>
+              {{type}}
+            </li>
+            <li>
+              {{gears}}
+            </li>
+            {{/with}}
+          </ul>
+        </div>
+        {{/with}}
+
+        <div>
+          <span class="badge rounded-pill text-bg-danger">fuel_economy</span>
+        </div>
+        <ul>
+          {{#with fuel_economy }}
+          <li>
+            {{city}}
+          </li>
+          <li>
+            {{highway}}
+          </li>
+          <li>
+            {{combined}}
+          </li>
+          {{/with}}
+        </ul>
+      </div>
+
+      <div class="col-2">
+        <div>{{#with price}}</div>
+        <div><span class="badge rounded-pill text-bg-danger">price</span></div>
+
+        <ul>
+          <li>
+            {{base}}
+          </li>
+          <li>
+            {{destination}}
+          </li>
+          <ul>
+            {{#with options}}
+            <div><span class="badge rounded-pill text-bg-secondary">options</span></div>
+
+            <li>
+              {{navigation}}
+            </li>
+            <li>
+              {{moonroof}}
+            </li>
+            <li>
+              {{premium_paint}}
+            </li>
+            {{/with}}
+          </ul>
+          </li>
+          <li>
+            {{total}}
+          </li>
+          {{/with}}
+      </div>
+
     </div>
-    {{/with}}
+  </div>
+</div>
+
+
+
     
-   </div>
-
-	<div>
-  <span class="badge rounded-pill text-bg-warning">audio</span>
-  {{#with audio}}
-  <ul>
-  <li>{{system}}</li>
- <li>{{speakers}}</li> 
- <li>{{#if subwoofer}}
-  subwoofer
-  {{/if}}
- </li>
- <li>{{#if bluetooth}}
-  bluetooth
-  {{/if}}
- </li>
- <li>{{#if USB}}
-  USB
-  {{/if}}
-   </li>
-  {{/with}}
-  </ul>
-</div>
- {{/with}}
-
-<div>
-<p>{{#with exterior}}</p>
-<span class="badge rounded-pill text-bg-primary">exterior</span>
-<div><span class="badge rounded-pill text-bg-secondary">wheels</span></div>
-<ul>
-{{#with wheels}}
-<li>{{size}}</li>
-<li>{{type}}</li>
-<li>{{color}}</li>
-{{/with}}
-</ul>
-</div>
-
-<div><span class="badge rounded-pill text-bg-warning">headlights</span></div>
-<ul>
- {{#with headlights}}
-  <li>{{type}}</li>
-  <li>{{brightness}}</li>
-  <li>{{#if automatic}}
-    automatic
-    {{/if}}
-  </li>
-  {{/with}}
-</ul>
-
-<div>
-  <span class="badge rounded-pill text-bg-warning">sunroof</span>
-</div>
-<ul>
-{{#with sunroof}}
-<li>{{type}}</li>
-<li>{{size}}</li>
-<li>{{#if automatic}}
-  automatic
-  {{/if}}
-</li>
-{{/with}}
-</ul>
- {{/with}}
-
-<div>{{#with safety}}
-  <span class="badge rounded-pill text-bg-primary">safety</span>
-</div>
-<div><span class="badge rounded-pill text-bg-secondary">airbags</span> </div>
-<ul>
-  {{#with airbags}}
-  <li>{{front}}</li>
-  <li>{{side}}</li>
- <li>{{knee}}</li>
- <li>{{rear}}</li>
-  {{/with}}
-</ul>
-
-<div><span class="badge rounded-pill text-bg-secondary">assistance</span></div>
-
-<ul>
-{{#with assistance}}
-<li>
-  {{#if blind_spot_monitoring}}
-  blind_spot_monitoring
-  {{/if}}
-</li>
-<li>
-  {{#if rear_cross_traffic_alert}}
-  rear_cross_traffic_alert
-  {{/if}}
-</li>
-<li>
-  {{#if adaptive_cruise_control}}
-  adaptive_cruise_control
-  {{/if}}
-</li>
-<li>
-  {{#if collision_warning}}
-  collision_warning
-  {{/if}}
-</li>
-{{/with}}
-</ul>
-
-{{/with}}
-{{/with}}
-
-<div>
-  <p>
-    {{#with engine}}
-    <span class="badge rounded-pill text-bg-danger">engine</span>
-<div>
-  <span class="badge rounded-pill text-bg-primary">type</span>
-</div>
-<div>{{type}}</div>
-<div>
-  <span class="badge rounded-pill text-bg-warning">displacement</span>
-</div>
-<div>{{displacement}}</div>
-<div>
-  <span class="badge rounded-pill text-bg-success">horsepower</span>
-</div>
-<div>{{horsepower}}</div>
-<div>
-  <span class="badge rounded-pill text-bg-info">torque</span>
-</div>
-<div>{{torque}}</div>
-<br>
-<div>
- <span class="badge rounded-pill text-bg-secondary">transmission</span>
-  <ul>{{#with transmission}}
- <li>
-  {{type}}
-  </li>
- <li>
-  {{gears}}
-   </li>
-  {{/with}}
-  </ul>
-  </div>
-    {{/with}}
-  </div>
-  <div>
-    <span class="badge rounded-pill text-bg-danger">fuel_economy</span>
-  </div>
-  <ul>
-   {{#with fuel_economy }} 
-<li>
-  {{city}}
-</li>
-<li>
-  {{highway}}
-</li>
-<li>
-  {{combined}}
-</li>
-{{/with}}
-  </ul>
-
-<div>{{#with price}}</div>
- <div><span class="badge rounded-pill text-bg-danger">price</span></div>
-
-<ul>
-  <li>
-  {{base}}
-</li>
-<li>
-  {{destination}}
-</li>
-<ul>
-  {{#with options}}
-<div><span class="badge rounded-pill text-bg-secondary">options</span></div>
-
-<li>
-  {{navigation}}
-</li>
-<li>
-  {{moonroof}}
-</li>
-<li>
-  {{premium_paint}}
-</li>
-  {{/with}}
-</ul>  
-</li>
-<li>
-  {{total}}
-</li>
-  {{/with}}
-
-</div>
-
-{{!--
-Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
-Адже наш layout/default.hbs має вже структуру HTML
---}}
+       
+    {{!--
+    Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+    Адже наш layout/default.hbs має вже структуру HTML
+    --}}

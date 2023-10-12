@@ -2,197 +2,183 @@
 Це код container файлу для index сторінки,
 в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/"
 }}
-<div>
+<main class="m-5">
   <h1>Apple MacBook Pro </h1>
-</div>
-<div>
-  <section><h2>{{description}}
-      <div>
-        {{price}}
+  <div class="row col-6">
+    <img class="card-img-top" src="https://picsum.photos/2200/1110" alt="MacBook">
+    <div class="mt-3"><strong>{{description}}</strong>
+      <button type="button" class="btn btn-primary "> {{price}}</button>
+
+      <div class="mt-5">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Computers</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Tablets</li>
+          </ol>
+        </nav>
       </div>
-      <div>
-        {{category}}
-      </div>
-    </h2>
-  </section>
-</div>
-<section>
-  <div>
 
-    <h3>Features:<span
-        class='badge bg-secondary'
-      ></span></h3>
-    {{#with features}}
-      <span class='badge text-bg-danger'>Processor</span>
 
-      <ul>
-        {{#with processor}}
+    </div>
+  </div>
+  <section>
+    <div>
+      <div class="row ">
+        <div class="mb-2">Features:</div>
+        <div class="col-3">
+          {{#with features}}
+          <span class='badge text-bg-danger mb-2'>processor</span>
 
-          <li>
-            {{brand}}
-          </li>
-          <li>{{model}}
-          </li>
-          <li>
-            {{speed}}
-          </li>
-          <li>
-            {{cores}}
-          </li>
-          <li>
-            {{cache}}
-          </li>
-        {{/with}}
-      </ul>
-      <div>
-        <span class='badge text-bg-success'>Memory</span>
-        <ul>
+
+          {{#with processor}}
+
+          <select class="form-select">
+            <option selected>{{processor}}</option>
+            <option value="{{brand}}">{{brand}}</option>
+            <option value="{{model}}">{{model}}</option>
+            <option value="{{speed}}">{{speed}}</option>
+            <option value="{{cores}}">{{cores}}</option>
+            <option value="{{cache}}">{{cache}}</option>
+          </select>
+          {{/with}}
+        </div>
+        <div class="col-3">
+          <span class='badge text-bg-success mb-2'>memory</span>
+
           {{#with memory}}
 
-            <li>
-              {{type}}
-            </li>
-            <li>
-              {{size}}
-            </li>
-            <li>
-              {{speed}}
-            </li>
+          <select class="form-select">
+            <option selected>{{memory}}</option>
+            <option value="{{type}}">{{type}}</option>
+            <option value="{{size}}">{{size}}</option>
+            <option value="{{speed}}">{{speed}}</option>
+
+          </select>
           {{/with}}
-        </ul>
-      </div>
-      <div>
-        <span class='badge text-bg-primary'>Storage</span>
-        <ul>
+        </div>
+
+        <div class="col-3">
+          <span class='badge text-bg-primary mb-2'>storage</span>
+
           {{#with storage}}
-            <li>{{type}}</li>
-            <li>{{size}}</li>
-
+          <select class="form-select">
+            <option selected>{{storage}}</option>
+            <option value="{{type}}">{{type}}</option>
+            <option value="{{size}}">{{size}}</option>
+          </select>
           {{/with}}
-        </ul>
+        </div>
+
+        <div class="col-3">
+          <span class='badge text-bg-info mb-2'>display</span>
+          {{#with display}}
+          <select class="form-select">
+            <option selected>{{display}}</option>
+            <option value="{{size}}">{{size}}</option>
+            <option value="{{resolution}}">{{resolution}}</option>
+            <option value="{{technology}}">{{technology}}</option>
+            <option value="{{color_space}}">{{color_space}}</option>
+            <option value="{{brightness}}">{{brightness}}</option>
+            <option value="{{refresh_rate}}">{{ refresh_rate}}</option>
+          </select>
+          {{/with}}
+
+        </div>
+      </div>
+
+      <div class="row ">
+        <div class="col-3">
+          <span class='badge text-bg-secondary mb-4'>graphics</span>
+
+          {{#with graphics}}
+          <select class="form-select">
+            <option selected>{{graphis}}</option>
+            <option value="{{brand}}">{{brand}}</option>
+            <option value="{{model}}">{{model}}</option>
+            <option value="{{memory}}">{{memory}}</option>
+          </select>
+          {{/with}}
+        </div>
+
+
+
+        <div class="col-3">
+          <span class="badge text-bg-warning mb-4">ports</span>
+
+          {{#each ports}}
+          <select class="form-select mb-1">
+            <option selected>{{ports}}</option>
+            <option value="{{type}}">{{type}}</option>
+            <option value="{{count}}">{{count}}</option>
+          </select>
+<div class=" mb-1">
+          {{#each features }}
+<li>
+          {{this}}
+          </li>
+          {{/each}}
+          </div>
+          {{/each}}
+          </div>
+
+
+        <div class="col-3">
+          <span class="badge rounded-pill text-bg-light mb-4">battery</span>
+          {{#with battery}}
+          <select class="form-select">
+            <option selected>{{battery}}</option>
+            <option value="{{type}}">{{type}}</option>
+            <option value="{{capacity}}">{{capacity}}</option>
+            <option value="{{life}}">{{life}}</option>
+          </select>
+          {{/with}}
+</div>
+
+
+<div class="col-3">
+          <span class="badge rounded-pill text-bg-info mb-1">weight</span>
+          <div>
+            <span class="badge rounded-pill text-bg-light mt-1">dimensions</span>
+            {{#with dimensions}}
+            <select class="form-select">
+              <option selected>{{dimensions}}</option>
+              <option value="{{height}}">{{height}}</option>
+              <option value="{{width}}">{{width}}</option>
+              <option value="{{depth}}">{{depth}}</option>
+            </select>
+            {{/with}}
+
+          </div>
+        </div>
       </div>
       <div>
-        <span class='badge text-bg-info'>Display</span>
-        <ul>
-          {{#with display}}
-            <li>
-              {{size}}
-            </li>
-            <li>
-              {{resolution}}
-            </li>
-            <li>
-              {{technology}}
-            </li>
-            <li>
-              {{color_space}}
-            </li>
-            <li>
-              {{brightness}}
-            </li>
-            <li>
-              {{refresh_rate}}
-            </li>
-          {{/with}}
-        </ul>
-      </div>
-   
+        <h5>Operating_system</h5>
+        <div><b>'macOS'</div></b>
+        <div>
+          <span class="badge rounded-pill text-bg-light mb-2">Accessories</span>
+        </div>
+        <div class="row">
+          
+          <ul class="nav">
+            {{#each accessories}}
+<li class="nav-item">
+    <a class="nav-link active" aria-current="page" href="#">{{name}}</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">{{price}}</a>
+  </li>
   
-  <div>
-    <span class='badge text-bg-secondary'>Graphics</span>
-    <ul>
-      {{#with graphics}}
-        <li>
-          {{brand}}
-        </li>
-        <li>
-          {{model}}
-        </li>
-        <li>
-          {{memory}}
-        </li>
+{{/each}}
+      </ul>  
+      
+        </div>
+      </div>
+
       {{/with}}
-    </ul>
-  </div>
-<div>
-    <span class="badge text-bg-warning">Ports</span>
-    <ul>
-        {{#each ports}}
-<li>
-    {{type}}
-    
-    {{count}}
-</li>
-   <ul>
-    {{#each features }}
-
-<li>
-    {{this}}
-</li>
-   {{/each}}
-    </ul>
-        {{/each}}
-    </ul>
-</div>
-<div>
-    <span class="badge rounded-pill text-bg-light">Battery</span>
-    <ul>
-        {{#with battery}}
-<li>
-    {{type}}
-</li>
-<li>
-    {{capacity}}
-</li>
-<li>
-    {{life}}
-</li>
-        {{/with}}
-    </ul>
-</div>
-<div>
-    <span class="badge rounded-pill text-bg-light">Weight</span>
-  <div>
-    <span class="badge rounded-pill text-bg-light">Dimensions</span>
-    <ul>
-        {{#with dimensions}}
-<li>
-    {{height}}
-</li>
-<li>
-    {{width}}
-</li>
-<li>
-    {{depth}}
-</li>
-        {{/with}}
-    </ul>
-  </div>  
-</div>
-
-<div>
-    <span class="badge rounded-pill text-bg-info">Operating_system</span>
-<div><b>'macOS'</div></b>
-<div>
-   <span class="badge rounded-pill text-bg-light">Accessories</span> 
-</div>
-<div>
-    <ul>
-        {{#each accessories}}
-<li>
-    {{name}}
-    {{price}}
-</li>
-        {{/each}}
-    </ul>
-</div>
-</div>
-
- {{/with}}
-</section>
+</main>
 {{!
 Цей код містить лише те, що буде виводитись в
 
 <body>
-    Адже наш layout/default.hbs має вже структуру HTML
-    }}
+  Адже наш layout/default.hbs має вже структуру HTML
+  }}
