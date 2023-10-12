@@ -4,24 +4,27 @@
 --}}
 
 
-<div>
+<div class=" row m-5">
     {{#with program}}
     {{#with excursion}}
-    <h1>{{name}}</h1>
+    <h1 class="text-center">{{name}}</h1>
 
+   
+    <img src="https://picsum.photos/1000/400" >
     {{#with location}}
-    <div><em>{{city}}</em></div>
-    <div><em>{{country}}</em></div>
+    <h2 class="m-2">{{city}}</h2>
+    <h3>{{country}}</h3>
 
     {{/with}}
-    {{date}}
+  
+  <strong> {{date}}</strong> 
 </div>
-<hr>
+<hr class="m-5">
 <div>
-    <ul>
+    <ul class="m-4">
         {{#each program}}
         <li>
-            <div>{{name}}</div>
+            <div> <strong>{{name}}</strong></div>
             <div>{{type}}</div>
             <div>{{durations}}</div>
             {{#with details}}
@@ -31,22 +34,22 @@
             {{#with location}}
             <div>
                 <address>
-                    <div>{{address}}</div>
+                    <h6>{{address}}</h6>
                     <div>{{city}}</div>
-                    <div>{{country}}</div>
+                    <h6>{{country}}</h6>
                 </address>
 
             </div>
             {{/with}}
-            <ul>
+            <ul class="m-4">
                 {{#each exhibits}}
                 <li>
                     <b>
-                        <div>{{name}}</div>
+                        <div><strong>{{name}}</strong></div>
                     </b>
                     <div>{{artist}}</div>
                     <p><q>{{description}}</q></p>
-                    <div>{{#if audio_guide}}
+                    <div class="m-2">{{#if audio_guide}}
                         Audio guide
                         {{/if}}
                     </div>
@@ -58,14 +61,14 @@
 
     {{#with venue}}
     <div>
-        <b>{{name}}</b>
+        <b><strong>{{name}}</strong></b>
     </div>
     <div>
         {{#with location}}
         <address>
             <div>{{address}}</div>
             <div>{{city}}</div>
-            <div>{{country}}</div>
+            <h6>{{country}}</h6>
     </div>
     </address>
     {{/with}}
@@ -73,23 +76,22 @@
 {{/with}}
 
 
-<ul>
+<ul class="m-4">
     {{#each performers}}
     <li>
         <b>
-            <div>{{name}}</div>
+            <div><strong>{{name}}</strong></div>
         </b>
         <div>{{type}}</div>
     </li>
     {{/each}}
 </ul>
-
+<div class="row m-4">
 {{#with guide}}
-<div>{{name}}</div>
-<div>{{language}}</div>
-<div>{{rating}}</div>
+<div >{{language}}</div>
+<div >{{rating}}</div>
 {{/with}}
-
+</div>
 {{/with}}
 {{/each}}
 </ul>

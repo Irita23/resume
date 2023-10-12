@@ -2,14 +2,14 @@
 Це код container файлу для summary сторінки,
 в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
 }}
-<div>
+<div class="m-3">
     {{#with page_header}}
     <h1 class='text-center'>{{title}}</h1>
     <p class='text-center text-uppercase text-dark'>{{description}}</p>
     {{/with}}
 </div>
 
-<div>
+<div class="m-3">
     {{#with section}}
     {{#with about_us}}
     {{#with title_list}}
@@ -24,7 +24,7 @@
   <br>
         <div>
             {{#with button}}
-            <button class='btn btn-outline-info btn-sm'>{{text}}</button>
+            <button class='btn btn-outline-info btn-sm ms-3'>{{text}}</button>
         </div>
         {{/with}}
         <br>
@@ -40,7 +40,7 @@
 <br>
 <br>
 
-<div class="card">
+<div class="card m-3">
     <div class="card-body">
         {{#with advantage}}
         <div class="display-5 text-muted">{{title}}</div>
@@ -97,7 +97,7 @@
 <br>
 </div>
 </div>
-<div class="card"><div class="card-body">
+<div class="card m-3"><div class="card-body">
    {{#with agreement}} 
    <div class="display-5 text-dark">{{title}}</div>
 <div class="card"><div class="card-body">

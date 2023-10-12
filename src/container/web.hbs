@@ -1,110 +1,109 @@
-{{!--
+{{!
 Це код container файлу для summary сторінки,
 в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
---}}
-
+}}
 
 <div>
-    <div>
-        {{#with web}}
+  <div>
+    {{#with web}}
 
-        <ul>
-            {{#each languages}}
-            <li>
-                <h1>{{name}}</h1>
-                {{version}}
-                <p>{{description}}</p>
-            </li>
-            <br>
-            <div>
-                <ul>
-                    {{#each elements}}
-                    <li>
+      <div class="ms-4">
+        {{#each languages}}
+          <div>
+            <h1>{{name}}</h1>
+            <img
+              class='card-im-top'
+              src='https://picsum.photos/400/200'
+              
+            />
+
+            {{version}}
+            <p class='col-5'>{{description}}</p>
+          </div>
+          
+          <div>
+            <ol>
+              {{#each elements}}
+                <li>
+                  {{name}}
+                  <p>
+                    {{description}}
+                  </p>
+                </li>
+                <div>
+                  <ol>
+                    {{#each attributes}}
+                      <li>
                         {{name}}
                         <p>
-                            {{description}}
+                          {{description}}
                         </p>
-                    </li>
-                    <div>
-                        <ul>
-                            {{#each attributes}}
-                            <li>
-                                {{name}}
-                                <p>
-                                    {{description}}
-                                </p>
-                            </li>
-                            {{/each}}
-                        </ul>
-                    </div>
+                      </li>
                     {{/each}}
-                </ul>
-            </div>
-            <br>
-            <div>
-                <ul>
-                    {{#each properties}}
-                    <li>
-                        {{name}}
+                  </ol>
+                </div>
+              {{/each}}
+            </ol>
+          </div>
+         
+          <div>
+            <ol>
+              {{#each properties}}
+                <li>
+                  {{name}}
+                  <p>
+                    {{description}}
+                  </p>
+                </li>
+                <div>
+                  <ol>
+                    {{#each values}}
+                      <li>
+                        {{value}}
                         <p>
-                            {{description}}
+                          {{description}}
                         </p>
-                    </li>
-                    <div>
-                        <ul>
-                            {{#each values}}
-                            <li>
-                                {{value}}
-                                <p>
-                                    {{description}}
-                                </p>
-                            </li>
-                            {{/each}}
-                        </ul>
-                    </div>
+                      </li>
                     {{/each}}
-                </ul>
-            </div>
-            <br>
-            <div>
-                <ul>
-                    {{#each functions}}
-                    <li>
+                  </ol>
+                </div>
+              {{/each}}
+            </ol>
+          </div>
+        
+          <div>
+            <ol>
+              {{#each functions}}
+                <li>
+                  {{name}}
+                  <p>
+                    {{description}}
+                    
+                  </p>
+                </li>
+                <div>
+                  <ol>
+                    {{#each parameters}}
+                      <li> 
                         {{name}}
+                        {{type}}
+                        
                         <p>
-                            {{description}}
+                          {{description}}
+                         
                         </p>
-                    </li>
-                    <div>
-                        <ul>
-                            {{#each parameters}}
-                            <li>
-                                {{name}}
-                                {{type}}
-                                <p>
-                                    {{description}}
-                                </p>
-                            </li>
-                            {{/each}}
-                        </ul>
-                    </div>
+                      </li>
                     {{/each}}
-                </ul>
-            </div>
-            {{/each}}
-        </ul>
-        {{/with}}
-    </div>
+                  </ol>
+                </div>
+              {{/each}}
+            </ol>
+          </div>
+        {{/each}}
+      </ol>
+    {{/with}}
+  </div>
 </div>
-
-
-
-
-
-
-
-
-
 
 {{!--
 Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
